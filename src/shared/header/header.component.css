@@ -1,0 +1,42 @@
+.navbar {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-gap: 5px;
+  grid-auto-flow: row;
+  background-color: transparent;
+  align-items: center;
+  padding: 0 10px;
+}
+
+/*
+.logo-header {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
+.logo-header img{
+  width: 50vw;
+  max-width: 400px;
+  min-width: 200px;
+}*/
+
+
+.logo-header {
+  height: 80px;
+  grid-column: 1/4;
+  margin: auto;
+}
+
+.logo-bar{
+  grid-column: 10/11;
+  font-size: 2rem;
+  margin: auto;
+  color: lightskyblue;
+  cursor: pointer;
+}
+
+.navbar{
+  border-bottom: 2px solid darkblue;
+}
