@@ -6,3 +6,65 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+:root {
+  --lightblue-ban-occ: #0788ce;
+  --gray-ban-occ: #979090;
+  --gray-card: #e8e8e8;
+  --orange-bg-alert: #fdefd8;
+  --orange-text-alert: #f4c26a;
+
+}
+
+.text-left {
+  text-align: left;
+}
+
+h1 {
+  font-size: calc(1rem + 1vw);
+  font-weight: 700;
+}
+
+h2.info-subtitle, p.p-info{
+  font-size: calc(.6rem + .6vw);
+  font-weight: normal;
+}
+
+h3.card-title{
+  font-size: calc(.5rem + .5vw); 
+}
+
+.card-footer small {
+  font-size: calc(.4rem + .4vw);  
+}
+
+@media (max-width: 575.98px) {
+
+  h1 {
+    font-size: calc(1.2rem + 1.2vw);
+  }
+
+  h2.info-subtitle, p.p-info{
+    font-size: calc(.8rem + .8vw);
+  }
+
+  h3.card-title{
+    font-size: calc(.7rem + .7vw); 
+  }  
+
+  .card-footer small {
+    font-size: calc(.6rem + .5vw);
+  }
+}
+
+.alert-warning {
+  color: var(--orange-text-alert);
+  background-color: var(--orange-bg-alert);
+  border-color: var(--orange-bg-alert);
+}
+
+.separator {
+  border-left: 2px solid var(--orange-text-alert);
+  height: 1.20rem;
+  margin: 0 8px;
+}
