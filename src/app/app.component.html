@@ -1,29 +1,196 @@
-<app-header></app-header>
-
-<div class="container">
-  <div class="row">
-    <div class="col">
-      Column
+<header class="py-1 mb-3"> 
+  <nav class="navbar px-3">	
+    <img class="logo-header" src="assets/images/logo-banco-occidente.png" alt="logo Banco Occidente">
+    <i (click)="openMenu()" class="off logo-bar bi bi-list"></i>
+    <ul class="ham-menu">
+      <i (click)="closeMenu()" class="off close-menu-icon bi bi-x-lg"></i>
+      <li><img class="user-photo rounded-circle" src="assets/images/user.jpg" alt="fotografía usuario"></li>
+      <li>
+        <p class="text-user-info fw-bold">{{this.usuario.gerenteRelacion}}</p>
+            <p class="text-user-subinfo">Gerente de relación</p>
+      </li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a href="#">Configuración</a></li>
+      <li><a href="#">Perfil</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a href="#">Cerrar sesión</a></li>
+    </ul>
+    <div class="user-info">
+      <div class="row">
+        <div class="col-9 user-data">
+            <p class="text-user-info fw-bold">{{this.usuario.gerenteRelacion}}</p>
+            <p class="text-user-subinfo">Gerente de relación</p>
+        </div>
+        <div class="col-3 user-data"> 
+          <div class="dropdown">
+            <a href="#" class="d-block link-dark text-decoration-none dropdown-toggle" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+              <img class="user-photo rounded-circle" src="assets/images/user.jpg" alt="fotografía usuario">
+            </a>
+            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser">
+              <li><a class="dropdown-item" href="#">Configuración</a></li>
+              <li><a class="dropdown-item" href="#">Perfil</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Cerrar sesión</a></li>
+            </ul>
+          </div>       
+                  
+        </div>
+      </div>
     </div>
-  </div>
+  </nav>
+</header>
 
-  <div class="row">
-    <div class="col">
-      Column
+<main>
+  <section id="informacion-general">
+    <div class="container principal-container pt-2 pt-md-3 pt-lg-4 pt-xl-4">
+      <div class="row">
+        <div class="col-12 text-center">
+          <h1>{{this.usuario.nombre}}</h1>
+          <h2 class="info-subtitle"><strong>NIT:</strong> {{this.usuario.nit}}</h2>     
+          <div class="d-flex justify-content-center">
+            <p class="mx-1 p-info"><strong>Capa:</strong> {{this.usuario.capa}}</p>
+            <i class="bi bi-circle-fill" style="font-size: .3rem; color: cornflowerblue; margin: .7rem;"></i>
+            <p class="mx-1 p-info"><strong>Segmento:</strong> {{this.usuario.segmento}}</p>
+          </div>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
+  <section id="acciones">
+    <div class="container principal-container">
+      <div class="row row-tabs">
+        <div class="col-12 text-center">
 
-  <div class="row">
-    <div class="col">
-      Column
+          <ul class="nav nav-tabs justify-content-between" id="principalTab" role="tablist">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="operacion-tab" data-bs-toggle="tab" data-bs-target="#operacion" type="button" role="tab" aria-controls="operacion" aria-selected="true">Operación</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="indicadores-tab" data-bs-toggle="tab" data-bs-target="#indicadores" type="button" role="tab" aria-controls="indicadores" aria-selected="true">Indicadores</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="info-cliente-tab" data-bs-toggle="tab" data-bs-target="#info-cliente" type="button" role="tab" aria-controls="info-cliente" aria-selected="false">Información Cliente</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="principalTabContent">
+            <div class="tab-pane fade show active" id="operacion" role="tabpanel" aria-labelledby="operacion-tab">
+                <div class="container pt-2 pt-md-3 pt-lg-4 pt-xl-4 px-0">
+                  <p class="text-left fw-bold text-info-ban-occ">Indique la línea de crédito que quiere reconsiderar</p>
+                  <div class="container container-70">
+                    <div class="row row-cols-2 g-2 pt-2 pt-md-3 pt-lg-4 pt-xl-4 pb-3 pb-md-4 pb-lg-5 pb-xl-5">
+                      <div class="col">
+                        <div class="card h-100">
+                          <div class="card-body">
+                            <div class="icon-card">
+                              <i class="bi bi-handbag-fill"></i>                        
+                            </div> 
+                            <h3 class="card-title pt-2">Cartera ordinaria</h3>                      
+                          </div>                                         
+                          <div class="card-footer">
+                            <small class="fw-bold">Continuar</small>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="card h-100">
+                          <div class="card-body">
+                            <div class="icon-card">
+                              <i class="bi bi-house-fill"></i>                       
+                            </div> 
+                            <h3 class="card-title pt-2">Leasing</h3>                      
+                          </div>                         
+                          <div class="card-footer">
+                            <small class="fw-bold">Continuar</small>
+                          </div>
+                        </div>
+                      </div>          
+                    </div>
+                  </div>  
+                  <div class="alert alert-warning d-flex align-items-center" role="alert">
+                    <i class="bi bi-info-circle"></i>
+                    <div class="separator"></div>
+                    <div class="alert-text">Las demás líneas de crédito no estarán disponibles por el momento</div>
+                  </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="indicadores" role="tabpanel" aria-labelledby="indicadores-tab">
+              <div class="container pt-2 pt-md-3 pt-lg-4 pt-xl-4 px-0">
+                <p class="text-left fw-bold text-info-ban-occ">Seleccione el indicador que desea consultar</p>
+                <div class="container container-70">
+                  <div class="row row-cols-2 g-2 pt-2 pt-md-3 pt-lg-4 pt-xl-4 pb-3 pb-md-4 pb-lg-5 pb-xl-5">
+                    <div class="col">
+                      <div class="card h-100">
+                        <div class="card-body">
+                          <div class="icon-card">
+                            <i class="bi bi-diagram-3-fill"></i>                      
+                          </div> 
+                          <h3 class="card-title pt-2">Indicador 1</h3>                      
+                        </div>                                         
+                        <div class="card-footer">
+                          <small class="fw-bold">Continuar</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+                        <div class="card-body">
+                          <div class="icon-card">
+                            <i class="bi bi-bar-chart-line-fill"></i>                       
+                          </div> 
+                          <h3 class="card-title pt-2">Indicador 2</h3>                      
+                        </div>                         
+                        <div class="card-footer">
+                          <small class="fw-bold">Continuar</small>
+                        </div>
+                      </div>
+                    </div>          
+                  </div>
+                </div>  
+              </div>
+
+            </div>
+            <div class="tab-pane fade" id="info-cliente" role="tabpanel" aria-labelledby="info-cliente-tab">
+              <div class="container pt-2 pt-md-3 pt-lg-4 pt-xl-4 px-0">
+                <p class="text-left fw-bold text-info-ban-occ">Seleccione la información que desea consultar</p>
+                <div class="container container-70">
+                  <div class="row row-cols-2 g-2 pt-2 pt-md-3 pt-lg-4 pt-xl-4 pb-3 pb-md-4 pb-lg-5 pb-xl-5">
+                    <div class="col">
+                      <div class="card h-100">
+                        <div class="card-body">
+                          <div class="icon-card">
+                            <i class="bi bi-person-lines-fill"></i>                        
+                          </div> 
+                          <h3 class="card-title pt-2">Datos personales</h3>                      
+                        </div>                                         
+                        <div class="card-footer">
+                          <small class="fw-bold">Continuar</small>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="card h-100">
+                        <div class="card-body">
+                          <div class="icon-card">
+                            <i class="bi bi-bank2"></i>                       
+                          </div> 
+                          <h3 class="card-title pt-2">Datos bancarios</h3>                      
+                        </div>                         
+                        <div class="card-footer">
+                          <small class="fw-bold">Continuar</small>
+                        </div>
+                      </div>
+                    </div>          
+                  </div>
+                </div>  
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
-    <div class="col">
-      Column
-    </div>
-  </div>
-
-
-</div>
-
+  </section>
+</main>
 <app-footer></app-footer>
  
