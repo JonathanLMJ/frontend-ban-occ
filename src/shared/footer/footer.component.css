@@ -6,6 +6,37 @@
 
 .logo-footer img{
   width: 30vw;
-  max-width: 250px;
-  min-width: 120px;
+  max-width: 140px;
+}
+
+.footer{
+  position: absolute;
+  width: 100%;
+}
+
+@media (min-width: 768px) { 
+  .logo-footer img{
+    max-width: 85px;
+  }
+}
+
+@media (min-width: 768.2px) { 
+  .logo-footer {
+    justify-content: flex-end !important;
+  }
+}
+
+@media (min-width: 1280px) {
+
+  .logo-footer img{
+    width: 6vw;
+    min-width: 90px;
+    max-width: 130px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .footer {
+    position: relative; 
+  }
 }
